@@ -1,3 +1,9 @@
+/*
+    This event triggers when the browser has committed to loading a webpage.
+    As opposed to e.g. webNavigation.onCompleted, this will start to run early
+    so that we can begin to remove ads as soon as possible.
+*/
+
 chrome.webNavigation.onCommitted.addListener(function (tab) {
     // Prevents script from running when other frames load
     if (tab.frameId == 0) {
