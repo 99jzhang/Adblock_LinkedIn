@@ -6,12 +6,10 @@
     "author": "Jonathan Zhang",
     "permissions": [
         "scripting",
-        "activeTab",
-        "tabs",
         "webNavigation"
     ],
     "host_permissions": [
-        "https://www.linkedin.com/",
+        "https://www.linkedin.com/*",
         "<all_urls>",
         "*://*/*"
     ],
