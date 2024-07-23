@@ -2,15 +2,15 @@ function removeAds() {
     // Get all 'span' elements on the page
     let spans = document.getElementsByTagName("span");
 
+    // Loop through all 'span' elements
     for (let i = 0; i < spans.length; ++i) {
-        // Check if they contain the text 'Promoted'
+        // Check if the 'span' element contains the text 'Promoted'
         if (spans[i].innerHTML === "Promoted") {
-            // Get the div that wraps around the entire ad
+            // Get the closest parent element with class 'feed-shared-update-v2' (the ad container)
             let card = spans[i].closest(".feed-shared-update-v2");
 
-            // If the class changed and we can't find it with closest(), get the 6th parent
+            // If the closest parent element is not found, traverse up to 6 levels of parent nodes
             if (card === null) {
-                // Could also be card.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode :D
                 let j = 0;
                 card = spans[i];
                 while (j < 6) {
@@ -19,16 +19,17 @@ function removeAds() {
                 }
             }
 
-            // Make the ad disappear!
+            // Hide the ad container by setting its display style to 'none'
             card.setAttribute("style", "display: none !important;");
         }
     }
 }
 
-
+// Initial call to remove ads present when the script first runs
 removeAds();
 
-// Ensures ads will be removed as the user scrolls
+// Set up an interval to call the removeAds function every 100 milliseconds
+// This ensures that ads appearing as the user scrolls down the feed are also removed
 setInterval(function () {
     removeAds();
-}, 100)
+}, 100);
