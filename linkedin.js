@@ -1,7 +1,4 @@
-
-
 function removeAds() {
-
     // Get all 'span' elements on the page
     let spans = document.getElementsByTagName("span");
 
