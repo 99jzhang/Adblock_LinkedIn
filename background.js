@@ -7,8 +7,8 @@ chrome.webNavigation.onCommitted.addListener(function (details) {
         // Inject the 'linkedin.js' script into the tab where the navigation occurred
         chrome.scripting.executeScript({
             target: { tabId: details.tabId },  // Specify the target tab
-            files: ['linkedin.js']  /
-        });
+            files: ["linkedin.js"]  // Specify the script file to inject
+        })
     }
 });
 
