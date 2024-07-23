@@ -1,6 +1,7 @@
 function removeAds() {
     // Get all 'span' elements on the page
     let spans = document.getElementsByTagName("span");
+    console.log("First layer of removeAds func");
 
     // Loop through all 'span' elements
     for (let i = 0; i < spans.length; ++i) {
@@ -21,6 +22,7 @@ function removeAds() {
 
             // Hide the ad container by setting its display style to 'none'
             card.setAttribute("style", "display: none !important;");
+            console.log("Right after card.setAttribute none");
         }
     }
 }
@@ -30,6 +32,4 @@ removeAds();
 
 // Set up an interval to call the removeAds function every 100 milliseconds
 // This ensures that ads appearing as the user scrolls down the feed are also removed
-setInterval(function () {
-    removeAds();
-}, 100);
+setInterval(removeAds, 100);

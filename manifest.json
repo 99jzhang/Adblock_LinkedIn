@@ -13,6 +13,6 @@
         "webNavigation"
     ],
     "host_permissions": [
-        "*linkedin.com*"
+        "https://www.linkedin.com/*"
     ]
 }
