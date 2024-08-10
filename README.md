@@ -1,2 +1,2 @@
 # Adblock_LinkedIn
-A simple LinkedIn adblocker
+A simple LinkedIn adblocker, in development
